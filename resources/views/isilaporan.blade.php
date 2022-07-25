@@ -9,7 +9,6 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-
 <a href="/laporan">Buka list laporan</a><br>
 
 <table border="0" style="margin-bottom: 5px;margin-top: 25px;">
@@ -95,7 +94,7 @@
                 <form method="post" action="/isilaporan/{{ $isi->nopo }}">
                     @csrf
                     @method('delete')
-                    <button class="badge bg-danger" onclick="return confirm('Anda yakin ingin menghapus data?')"><img src="/icon-delete.svg" id="delete" name="delete"></button>
+                    <input type="submit" value="Hapus" id="delete" name="delete" onclick="return confirm('Anda yakin ingin menghapus data?')" />
                 </form>
             </td>
         @endforeach

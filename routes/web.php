@@ -7,6 +7,7 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\BuatLaporanController;
 use App\Http\Controllers\DetailLaporanController;
 use App\Http\Controllers\PrintController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +20,13 @@ use App\Http\Controllers\PrintController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
-
-Route::get('/home', function () {
-        return view('home', [
-        "title" => "Home",
-        "active" => "Home"
-    ]);
-});
+// Route::get('/', function () {
+//     return view('home', [
+//         "title" => "Home"
+//     ]);
+// });
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/buatlaporan', [BuatLaporanController::class, 'index'])->middleware('auth');
 Route::post('/buatlaporan', [BuatLaporanController::class, 'store']);

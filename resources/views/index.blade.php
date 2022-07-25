@@ -23,20 +23,18 @@
         <main class="form-signin w-100 m-auto">
             <form action="/login" method="post">
               @csrf
-              <div class="row justify-content-center"><img class="mb-4 mt-5 " src="login-logo.png"></div>
+              <div class="row justify-content-center"><img class="mb-4 mt-5" src="{{ URL('logo.png') }}" style="width: 200px"></div>
               <h1 class="h3 mb-3 fw-normal text-center">Silahkan Login</h1>
-              <div class="form-floating">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" autofocus required>
-                <label for="email">E-mail</label>
+              <div>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" autofocus required placeholder="Username/Email">
                 @error('email')
                  <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
               </div>
-              <div class="form-floating mt-1">
-                <input type="password" class="form-control" id="password" name="password" required>
-                <label for="password">Password</label>
+              <div class="mt-1">
+                <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
               </div>
-              <input class="w-100 btn btn-lg btn-primary mt-2" type="submit" value="Masuk">
+              <input class="w-10 btn btn-lg btn-primary mt-2" type="submit" value="Masuk">
             </form>
           </main>
     </div>

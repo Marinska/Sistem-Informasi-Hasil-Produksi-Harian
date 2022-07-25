@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <style type="text/css">
+    {{-- <style type="text/css">
   
       /* BASIC */
       
@@ -294,6 +294,12 @@
       
       }
       
+      </style> --}}
+      <style>
+        img {
+              width: 50px;
+              height: 50px;
+            }
       </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -308,7 +314,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-light border-bottom">
       <div class="container">
-        <a class="navbar-brand" href="/home">SIHPH</a>
+        <a class="navbar-brand" href="/home"><img src="{{ URL('logo.png') }}"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

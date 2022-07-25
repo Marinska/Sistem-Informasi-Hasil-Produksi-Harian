@@ -3,7 +3,7 @@
 @section('field')
 
 @if(session()->has('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
   {{ session('success') }}
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
@@ -53,7 +53,8 @@
     <form method="post" action="/laporan/{{ $laporan['id'] }}" style="display: inline">
       @csrf
       @method('delete')
-      <button class="badge bg-danger border-0"><img src="/icon-delete.svg" id="drop" name="drop" onclick="return confirm('Anda yakin ingin menghapus semua data Laporan?')"></button>
+      {{-- <button class="badge bg-danger border-0"><img src="/icon-delete.svg" id="drop" name="drop" onclick="return confirm('Anda yakin ingin menghapus semua data Laporan?')"></button> --}}
+      <input type="submit" value="Hapus" id="drop" name="drop" onclick="return confirm('Anda yakin ingin menghapus semua data Laporan?')" />
   </form>
     @endauth
   </td>

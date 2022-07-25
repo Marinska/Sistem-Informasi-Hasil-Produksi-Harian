@@ -11,7 +11,7 @@
                 <input type="date" class="form-control" id="floatingInput" placeholder="Masukan tanggal" name="id">
                 <label for="floatingInput">ID Laporan</label>
               </div>
-              <div class="form-floating">
+              <div class="form-floating mt-1">
                 <input type="text" class="form-control" id="floatingInput" name="petugas" value="{{ auth()->user()->name }}" readonly>
                 <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
                 <label for="floatingInput">Petugas</label>

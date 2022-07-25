@@ -18,7 +18,20 @@ class BuatLaporanController extends Controller
     {
         $newlap = 'LID'.$request->id;
         $tgl = Carbon::now();
-        laporan::create(['id' => $newlap, 'user_id' => $request->user_id, 'tanggal_laporan' => $tgl]);
+        laporan::updateorcreate(
+            ['id' => $newlap],
+            [
+                'user_id' => $request->user_id,
+                'tanggal_laporan' => $tgl
+            ]
+        );
         return redirect('/laporan')->with('success', 'Laporan berhasil dibuat');
+
+            // return redirect('/buatlaporan')->with('failed', 'Laporan sudah ada');
+        
+            // laporan::create(['id' => $newlap, 'user_id' => $request->user_id, 'tanggal_laporan' => $tgl]);
+            // return redirect('/laporan')->with('success', 'Laporan berhasil dibuat');
+        
+        
     }
 }
